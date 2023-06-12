@@ -1,0 +1,23 @@
+<script>
+  let v = parseFloat(prompt("Informe o valor da compra"))
+  let p = parseInt(prompt("Informe o número de parcelas"))
+  let prestacoes = []
+
+  if (v % p === 0) {
+    for (let i = 0; i < p; i++) {
+      prestacoes.push(v / p)
+    }
+  } else {
+    let r = v % p
+
+    for (let i = 0; i < r; i++) {
+      prestacoes.push(p)
+    }
+
+    for (let i = 0; i < p - r; i++) {
+      prestacoes.push((v - (r * p)) / (p - r))
+    }
+  }
+
+  alert(prestacoes)
+</script>
